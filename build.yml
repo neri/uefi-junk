@@ -1,0 +1,26 @@
+# build configuration file
+targets:
+  boot:
+    valid_arch: all
+    base_dir: bootmenu
+    sources:
+      - osldr
+      - atop
+      - menu
+      - libstd
+  acpi:
+    valid_arch: all
+    base_dir: acpidump
+    sources:
+      - acpidump
+      - libstd
+  hello:
+    valid_arch: all
+    base_dir: hello
+    sources:
+      - hello
+  bgrt:
+    valid_arch: all
+    base_dir: bgrt
+    sources:
+      - bgrt

@@ -1,0 +1,38 @@
+#	MEG-OS Boot Loader Resource File
+prefix: rsrc
+strings: 
+  default: 
+    main_title: MEG-OS Boot Menu v0.6
+    starting: Starting up...
+    press_esc_to_menu: To display advanced option menu, press SPACE bar within %d seconds...
+    load_error_title: Load Error
+    load_error: An error occurred during load system
+    error_code: ERROR CODE
+    press_any_key: Press any key to continue...
+    choose_an_option: Choose an option
+    start_normally: Start Normally
+    advanced_option: Advanced Option Menu
+    return_to_previous: Return to Previous Screen
+    other_devices: Other Devices
+    system_info: System Information
+    shell: Launch UEFI Shell
+    reset: Restart
+    shutdown: Shutdown
+    boot_to_fw_ui: UEFI BIOS Setup
+    display_settings: Display Settings
+  ja: 
+    starting: 起動中...
+    press_esc_to_menu: メニューを表示するにはスペースキーを押してください...
+    load_error: エラーが発生したため停止しました
+    error_code: エラーコード
+    press_any_key: 何かキーを押すと続行します...
+    choose_an_option: オプションを選択してください
+    start_normally: 通常起動する
+    advanced_option: 拡張オプションメニュー
+    return_to_previous: 前の画面に戻る
+    system_info: システム情報
+    shell: UEFI シェルを起動
+    reset: 再起動
+    shutdown: シャットダウン
+    boot_to_fw_ui: UEFI BIOS セットアップ
+    display_settings: 画面の設定
