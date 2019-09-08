@@ -22,7 +22,7 @@
 CONST CHAR16* KERNEL_PATH = L"" EFI_VENDOR_PATH "BOOT" EFI_SUFFIX ".EFI";
 CONST CHAR16* cp932_bin_path = L"" EFI_VENDOR_PATH "CP932.BIN";
 CONST CHAR16* cp932_fnt_path = L"" EFI_VENDOR_PATH "CP932.FNT";
-CONST CHAR16* SHELL_PATH = L"\\SHELL" EFI_SUFFIX ".EFI";
+CONST CHAR16* SHELL_PATH = L"\\EFI\\BOOT\\SHELL" EFI_SUFFIX ".EFI";
 
 CONST EFI_GUID EfiLoadedImageProtocolGuid = EFI_LOADED_IMAGE_PROTOCOL_GUID;
 CONST EFI_GUID EfiSimpleFileSystemProtocolGuid = EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_GUID;
@@ -352,17 +352,17 @@ void system_info() {
     uint32_t uver = gST->Hdr.Revision;
 
 #if defined(__x86_64__)
-    const char *arch = "amd64";
+    const char *arch = "amd64 (x86-64)";
 #elif defined(__aarch64__)
-    const char *arch = "aa64";
+    const char *arch = "arm64 (aarch64)";
 #elif defined(__i386__)
     const char *arch = "i386";
 #elif defined(__arm__)
     const char *arch = "arm";
 #endif
 
-    snprintf(caption, 1023, "UEFI ver %d.%d (%S %08x)\n  Arch: %s (%zd bit)\n",
-     (int)(uver >> 16), (int)(uver & 0xFFFF), gST->FirmwareVendor, gST->FirmwareRevision, arch, 8 * sizeof(void *));
+    snprintf(caption, 1023, "UEFI ver %d.%d (%S %08x)\n  Arch: %s\n",
+     (int)(uver >> 16), (int)(uver & 0xFFFF), gST->FirmwareVendor, gST->FirmwareRevision, arch);
 
     menu_buffer* items = init_menu();
     menu_add(items, get_string(rsrc_return_to_previous), 0);
